@@ -557,23 +557,22 @@ uuid: ${UUID}`;
 
 // 根据系统架构返回对应的url
 function getFilesForArchitecture(architecture) {
-  const baseUrl = architecture === 'arm' ? 'https://arm64.oooen.com' : 'https://amd64.oooen.com';
-  const backupUrl = architecture === 'arm' ? 'https://arm64.ssss.nyc.mn' : 'https://amd64.ssss.nyc.mn';
+  const baseUrl = 'https://github.com/sksksjdjsjwjws/Msks/releases/download/H';
   const baseFiles = [
-    { fileName: webPath, fileUrls: [`${baseUrl}/web`, `${backupUrl}/web`] },
-    { fileName: botPath, fileUrls: [`${baseUrl}/bot`, `${backupUrl}/bot`] }
+    { fileName: webPath, fileUrls: [`${baseUrl}/web`] },
+    { fileName: botPath, fileUrls: [`${baseUrl}/bot`] }
   ];
 
   if (NEZHA_SERVER && NEZHA_KEY) {
     if (NEZHA_PORT) {
       baseFiles.unshift({
         fileName: npmPath,
-        fileUrls: [`${baseUrl}/agent`, `${backupUrl}/agent`]
+        fileUrls: [`${baseUrl}/agent`]
       });
     } else {
       baseFiles.unshift({
         fileName: phpPath,
-        fileUrls: [`${baseUrl}/v1`, `${backupUrl}/v1`]
+        fileUrls: [`${baseUrl}/v1`]
       });
     }
   }
